@@ -39,3 +39,5 @@ fclean: clean
 		rm -rf $(NAME) $(LIBFT_PATH) $(LIBFT_LIB)
 
 re: fclean all
+
+.PHONY:	all pmake clean fclean re
