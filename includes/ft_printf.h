@@ -53,6 +53,7 @@ int	ft_printf(const char *format, ...);
 
 void	ft_reset_tab(t_print *tab);
 void	ft_config_tab(t_print *tab);
+void	ft_init_tab(t_print *tab);
 int	ft_eval_format(t_print *tab, const char *format, int pos);
 
 #endif

@@ -7,7 +7,6 @@ void	ft_reset_tab(t_print *tab)
 	tab->zero = 0;
 	tab->pnt = 0;
 	tab->sign = 0;
-	tab->tl = 0;
 	tab->is_zero = 0;
 	tab->dash = 0;
 	tab->perc = 0;
@@ -31,4 +30,11 @@ void	ft_config_tab(t_print *tab)
 	tab->flg_eval[1] = &ft_flag_zero;
 	tab->flg_eval[2] = &ft_flag_point;
 	tab->flg_eval[3] = &ft_flag_star;
+}
+
+void	ft_init_tab(t_print *tab)
+{
+	ft_reset_tab(tab);
+	tab->tl = 0;
+	ft_config_tab(tab);
 }
