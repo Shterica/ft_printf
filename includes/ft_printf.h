@@ -69,6 +69,7 @@ void	ft_print_percent(t_print *tab);
 
 /* FLAGS FUNCS (ft_eval_flag.c) */
 
+int	ft_eval_width(t_print *tab, const char *format, int pos);
 int	ft_flag_dash(t_print *tab, const char *format, int pos);
 int	ft_flag_zero(t_print *tab, const char *format, int pos);
 int	ft_flag_point(t_print *tab, const char *format, int pos);

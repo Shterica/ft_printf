@@ -26,7 +26,10 @@ LIBFTMAKE = $(MAKE) -C $(LIBFT_PATH)
 all: $(NAME)
 
 $(NAME): $(OBJS) pmake
-	ar -rcs $(NAME) $(OBJS) $(LIBFT_OBJS)
+	ar -rcs $(NAME) $(OBJS) $(LIBFT_OBJS) -I $(HEADERS_PATH)
+
+$(SRCS_PATH)%.o: $(SRCS_PATH)%.c
+	$(CC) $(CFLAGS) -c $< -o $@ -I $(HEADERS_PATH)
 
 pmake:
 	$(LIBFTMAKE)
@@ -36,7 +39,7 @@ clean:
 	rm -rf $(OBJS)
 
 fclean: clean
-		rm -rf $(NAME) $(LIBFT_PATH) $(LIBFT_LIB)
+		rm -rf $(NAME) $(LIBFT_OBJS) $(LIBFT_LIB)
 
 re: fclean all
 

@@ -1,6 +1,7 @@
 #include "ft_printf.h"
+#include "libft.h"
 
-static int	ft_str_id(const char c_list, char c)
+static int	ft_str_id(const char *c_list, char c)
 {
 	int	i;
 
@@ -14,7 +15,7 @@ static int	ft_str_id(const char c_list, char c)
 	return (-1);
 }
 
-static int	ft_eval_flag(t_print *tab, const char format, int pos)
+static int	ft_eval_flag(t_print *tab, const char *format, int pos)
 {
 	int	f_id;
 
