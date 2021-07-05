@@ -2,7 +2,10 @@
 
 void	ft_print_char(t_print *tab)
 {
-	(void) tab;
+	char	c;
+
+	c = va_arg(tab->args, int);
+	tab->tl += write(1, &c, 1);
 }
 
 void	ft_print_str(t_print *tab)

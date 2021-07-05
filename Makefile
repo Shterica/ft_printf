@@ -32,7 +32,7 @@ LIBFTMAKE = $(MAKE) -C $(LIBFT_PATH)
 all: $(NAME)
 
 $(NAME): $(OBJS) pmake
-	ar -rcs $(NAME) $(OBJS) $(LIBFT)
+	ar -rcs $(NAME) $(OBJS) $(LIBFT_OBJS)
 	ranlib $(NAME)
 
 $(SRCS_PATH)%.o: $(SRCS_PATH)%.c
@@ -42,7 +42,7 @@ pmake:
 	make -C $(LIBFT_PATH)
 
 clean:
-	make -C $(LIBFT_PATH) clean
+	make -C $(LIBFT_PATH) fclean
 	rm -rf $(OBJS)
 
 fclean: clean

@@ -18,7 +18,7 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 			i = ft_eval_format(tab, format, i + 1);
 		else
-			ret += write(1, &format[i], i + 1);
+			ret += write(1, &format[i], 1);
 		i++;
 	}
 	ret += tab->tl;

@@ -1,4 +1,6 @@
-SRCS	= ft_atoi.c ft_isdigit.c
+SRCS	= ft_atoi.c \
+	  ft_isdigit.c \
+	  ft_strcpy.c
 
 OBJ	:= $(patsubst %.c, %.o, $(SRCS))
 

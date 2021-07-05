@@ -1,5 +1,12 @@
 #include "ft_printf.h"
 
+int	ft_eval_width(t_print *tab, const char *format, int pos)
+{
+	(void) tab;
+	(void) format;
+	return (pos);
+}
+
 int	ft_flag_dash(t_print *tab, const char *format, int pos)
 {
 	(void) tab;
