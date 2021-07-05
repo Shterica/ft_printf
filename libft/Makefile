@@ -1,0 +1,26 @@
+SRCS	= ft_atoi.c ft_isdigit.c
+
+OBJ	:= $(patsubst %.c, %.o, $(SRCS))
+
+H	= libft.h
+
+CC	= gcc
+CFLAGS	= -Wall -Werror -Wextra
+
+NAME	= libft.a
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	@ar -rsc $@ $(OBJ)
+
+%.o: %.c $(H)
+	$(CC) $(CFLAGS) -o $@ -c $<
+
+clean:
+	@rm -rf $(OBJ)
+
+fclean: clean
+	@rm -rf $(NAME)
+
+re: fclean all
