@@ -56,4 +56,22 @@ void	ft_config_tab(t_print *tab);
 void	ft_init_tab(t_print *tab);
 int	ft_eval_format(t_print *tab, const char *format, int pos);
 
+/* CONVERIONS FUNCS (ft_eval_conv.c, ft_eval_conv2.c) */
+
+void	ft_print_char(t_print *tab);
+void	ft_print_str(t_print *tab);
+void	ft_print_pointer(t_print *tab);
+void	ft_print_int(t_print *tab);
+void	ft_print_unsigned_int(t_print *tab);
+void	ft_print_hex_low(t_print *tab);
+void	ft_print_hex_cap(t_print *tab);
+void	ft_print_percent(t_print *tab);
+
+/* FLAGS FUNCS (ft_eval_flag.c) */
+
+int	ft_flag_dash(t_print *tab, const char *format, int pos);
+int	ft_flag_zero(t_print *tab, const char *format, int pos);
+int	ft_flag_point(t_print *tab, const char *format, int pos);
+int	ft_flag_star(t_print *tab, const char *format, int pos);
+
 #endif

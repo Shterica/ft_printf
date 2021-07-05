@@ -25,7 +25,7 @@ void	ft_config_tab(t_print *tab)
 	tab->cnv_eval[5] = &ft_print_unsigned_int;
 	tab->cnv_eval[6] = &ft_print_hex_low;
 	tab->cnv_eval[7] = &ft_print_hex_cap;
-	tab->cnv_eval[8] = &ft_percent;
+	tab->cnv_eval[8] = &ft_print_percent;
 	tab->flg_eval[0] = &ft_flag_dash;
 	tab->flg_eval[1] = &ft_flag_zero;
 	tab->flg_eval[2] = &ft_flag_point;
