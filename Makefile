@@ -6,7 +6,7 @@ LIBFT_PATH = libft/
 
 LIBFT_LIB = libft.a
 
-HEADERS_PATH = includes/
+HEADERS	= -I includes/ -I libft/
 
 SRCS_FILES = ft_eval_conv.c \
 	     ft_eval_conv2.c \
@@ -36,7 +36,7 @@ $(NAME): $(OBJS) pmake
 	ranlib $(NAME)
 
 $(SRCS_PATH)%.o: $(SRCS_PATH)%.c
-	$(CC) $(CFLAGS) -c $< -o $@ -I $(HEADERS_PATH)
+	$(CC) $(CFLAGS) -c $< -o $@ $(HEADERS)
 
 pmake:
 	make -C $(LIBFT_PATH)

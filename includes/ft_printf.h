@@ -75,4 +75,8 @@ int	ft_flag_zero(t_print *tab, const char *format, int pos);
 int	ft_flag_point(t_print *tab, const char *format, int pos);
 int	ft_flag_star(t_print *tab, const char *format, int pos);
 
+/* FLAG UTILS (ft_flag_utils.c) */
+
+void	ft_update_tab(t_print *tab, int len);
+
 #endif
