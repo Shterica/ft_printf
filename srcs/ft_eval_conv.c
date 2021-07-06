@@ -63,7 +63,7 @@ void	ft_print_int(t_print *tab)
 	while (tab->prc-- > 0)
 		tab->tl += write(1, "0", 1);
 	while (nbr[i])
-		tab->tl += write(1, num + i++, 1);
+		tab->tl += write(1, nbr + i++, 1);
 	if (tab->dash)
 		while (tab->wdt-- > 0)
 			tab->tl += write(1, " ", 1);

@@ -29,6 +29,7 @@ int	ft_flag_zero(t_print *tab, const char *format, int pos)
 
 int	ft_flag_point(t_print *tab, const char *format, int pos)
 {
+	tab->pnt = 1;
 	pos++;
 	if (ft_isdigit(format[pos]))
 	{
@@ -45,6 +46,7 @@ int	ft_flag_point(t_print *tab, const char *format, int pos)
 
 int	ft_flag_star(t_print *tab, const char *format, int pos)
 {
+	(void) format;
 	tab->wdt = va_arg(tab->args, int);
 	pos++;
 	return (pos);
