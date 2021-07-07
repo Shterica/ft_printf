@@ -4,6 +4,7 @@
 
 int	main(void)
 {
+	char	str[] = "55";
 	/*
 	printf("std:\n");
 	printf("%2c %2c %2c\n", 'a', 'b', 'c');
@@ -11,9 +12,9 @@ int	main(void)
 	ft_printf("%2c %2c %2c\n", 'a', 'b', 'c');
 	*/
 	printf("std:\n");
-	printf("%-15.12u\n", 4820217010);
+	printf("%20.0p\n", 100000000000);
 	ft_printf("ft:\n");
-	ft_printf("%-15.12u\n", 4820217010);
+	ft_printf("%p\n", str);
 	/*
 	printf("std:\n");
 	printf("%.4c\n", 'c');
