@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int	ft_numlen(int nb)
+int	ft_numlen(long int nb)
 {
 	int	i;
 

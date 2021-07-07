@@ -20,6 +20,6 @@ void	ft_update_tab(t_print *tab, int len)
 		tab->prc = 0;
 	else
 		tab->prc -= len;
-	printf("\n----------\nupd: wdt = %d, prc = %d, len = %d\n------------\n", 
-			tab->wdt, tab->prc, len);
+	//printf("\n----------\nupd: wdt = %d, prc = %d, len = %d\n------------\n", 
+	//		tab->wdt, tab->prc, len);
 }

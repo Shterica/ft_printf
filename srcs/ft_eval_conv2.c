@@ -14,3 +14,8 @@ void	ft_print_percent(t_print *tab)
 {
 	(void) tab;
 }
+
+void	ft_print_pointer(t_print *tab)
+{
+	(void) tab;
+}

@@ -58,11 +58,12 @@ char	*ft_itoa(int n)
 	if ((sign = n) < 0)
 		n = -n;
 	i = 0;
+	p[i++] = n % 10 + '0';
+	n /= 10;
 	while (n > 0)
 	{
-		p[i] = n % 10 + 48;
+		p[i++] = n % 10 + 48;
 		n /= 10;
-		i++;
 	}
 	if (sign < 0)
 		p[i++] = '-';
