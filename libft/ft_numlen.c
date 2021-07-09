@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int	ft_numlen(long int nb)
+int	ft_numlen(long int nb, int base_len)
 {
 	int	i;
 
@@ -9,7 +9,7 @@ int	ft_numlen(long int nb)
 	i = 0;
 	while (nb > 0)
 	{
-		nb = nb / 10;
+		nb = nb / base_len;
 		i++;
 	}
 	return (i);

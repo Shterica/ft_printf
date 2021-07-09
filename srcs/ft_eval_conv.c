@@ -100,7 +100,7 @@ void	ft_print_unsigned_int(t_print *tab)
 	char		al;
 
 	nb = va_arg(tab->args, unsigned int);
-	len = ft_numlen(nb);
+	len = ft_numlen(nb, 10);
 	ft_update_tab(tab, len);
 	if (tab->zero)
 		al = '0';

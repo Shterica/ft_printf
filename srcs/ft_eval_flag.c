@@ -6,7 +6,7 @@ int	ft_eval_width(t_print *tab, const char *format, int pos)
 	int	len;
 
 	tab->wdt = ft_atoi(format + pos);
-	len = ft_numlen(tab->wdt);
+	len = ft_numlen(tab->wdt, 10);
 	pos = pos + len;
 	return (pos);
 }
@@ -34,7 +34,7 @@ int	ft_flag_point(t_print *tab, const char *format, int pos)
 	if (ft_isdigit(format[pos]))
 	{
 		tab->prc = ft_atoi(format + pos);
-		pos += ft_numlen(tab->prc);
+		pos += ft_numlen(tab->prc, 10);
 	}
 	else if (format[pos] == '*')
 	{

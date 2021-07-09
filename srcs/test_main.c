@@ -12,9 +12,15 @@ int	main(void)
 	ft_printf("%2c %2c %2c\n", 'a', 'b', 'c');
 	*/
 	printf("std:\n");
-	printf("%20.0p\n", 100000000000);
+	printf("%x\n", 4294967295);
 	ft_printf("ft:\n");
-	ft_printf("%p\n", str);
+	ft_printf("%x\n", 4294967295);
+	unsigned int test;
+	for (int i = 0; i < 8; i++)
+		test *= 16;
+	test--;
+	ft_printf("%x\n", test);
+	printf("%x\n", test);
 	/*
 	printf("std:\n");
 	printf("%.4c\n", 'c');
