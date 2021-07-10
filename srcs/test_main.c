@@ -1,34 +1,44 @@
 #include "ft_printf.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 
-int	main(void)
+int	main(int ac, char **av)
 {
-	char	str[] = "55";
-	/*
-	printf("std:\n");
-	printf("%2c %2c %2c\n", 'a', 'b', 'c');
-	ft_printf("ft:\n");
-	ft_printf("%2c %2c %2c\n", 'a', 'b', 'c');
-	*/
-	
-	printf("std:\n");
-	printf("%10.0p\n", 0);
-	ft_printf("ft:\n");
-	ft_printf("%10.0p\n", 0);
-	
-	/*unsigned int test;
-	for (int i = 0; i < 8; i++)
-		test *= 16;
-	test--;
-	ft_printf("%X\n", test);
-	//printf("%X\n", test);*/
-	//printf("%#x\n", 420);
-	//printf("%p\n", 420);
-	/*
-	printf("std:\n");
-	printf("%.4c\n", 'c');
-	printf("%-6.4s\n", "Hello, world!");
-	printf("%-06d\n", -12);
-	*/
+	if (ac == 1)
+	{
+		printf("%     %", 100);
+		printf("\n");
+		ft_printf("%      %", 100);
+		ft_printf("\n");
+
+		return (0);
+	}
+	else if (av[1][0] == 'd')
+	{
+		printf("std:\n");
+		printf((const char *) av[2], atoi(av[3]));
+		printf("\n");
+		ft_printf("ft:\n");
+		ft_printf((const char *) av[2], atoi(av[3]));
+		ft_printf("\n");
+	}
+	else if (av[1][0] == 's')
+	{
+		printf("std:\n");
+		printf((const char *) av[2], av[3]);
+		printf("\n");
+		ft_printf("ft:\n");
+		ft_printf((const char *) av[2], av[3]);
+		ft_printf("\n");
+	}
+	else if (av[1][0] == 'c')
+	{
+		printf("std:\n");
+		printf((const char *) av[2], av[3][0]);
+		printf("\n");
+		ft_printf("ft:\n");
+		ft_printf((const char *) av[2], av[3][0]);
+		ft_printf("\n");
+	}
 }

@@ -24,8 +24,8 @@ static int	ft_eval_flag(t_print *tab, const char *format, int pos)
 		pos = tab->flg_eval[f_id](tab, format, pos);
 	else if (ft_isdigit(format[pos]))
 		pos = ft_eval_width(tab, format, pos);
-	//else
-	//	pos++;
+	else
+		pos++;
 	return (pos);
 }
 
@@ -33,6 +33,8 @@ int	ft_eval_format(t_print *tab, const char *format, int pos)
 {
 	int	c_id;
 
+	if (!format[pos])
+		return (pos);
 	c_id = ft_str_id(tab->cnv_list, format[pos]);
 	while (c_id == -1)
 	{

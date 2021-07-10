@@ -87,6 +87,8 @@ int	ft_flag_plus(t_print *tab, const char *format, int pos);
 /* CONV UTILS (ft_conv_utils.c) */
 
 void	ft_print_empty(t_print *tab);
+void	ft_print_nbr_left(t_print *tab);
+void	ft_print_nbr_right(t_print *tab);
 
 /* FLAG UTILS (ft_flag_utils.c) */
 

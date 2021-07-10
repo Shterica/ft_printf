@@ -1,11 +1,12 @@
 #include "libft.h"
 
-static char	*ft_memalloc(int n)
+static int	ft_intlen(int n)
 {
-	char *p;
-	int count;
+	int		count;
 
 	count = 0;
+	if (n == 0)
+		return (1);
 	if (n < 0)
 	{
 		count++;
@@ -16,58 +17,33 @@ static char	*ft_memalloc(int n)
 		n = n / 10;
 		count++;
 	}
-	p = (char *)malloc(sizeof(char) * (count + 1));
-	if (!p)
-		return (NULL);
-	return (p);
-}
-
-int	ft_strlen(char *s)
-{
-	int i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
-
-static void	ft_reverse(char *s)
-{
-	int i;
-	int j;
-	char temp;
-	
-	i = 0;
-	j = ft_strlen(s) - 1;
-	while (i < j)
-	{
-		temp = s[i];
-		s[i] = s[j];
-		s[j] = temp;
-		i++;
-		j--;
-	}
+	return (count);
 }
 
 char	*ft_itoa(int n)
 {
-	int i;
-	int sign;
-	char *p;
-	
-	p = ft_memalloc(n);
-	if ((sign = n) < 0)
-		n = -n;
-	i = 0;
-	p[i++] = n % 10 + '0';
-	n /= 10;
-	while (n > 0)
+	int			i;
+	long int	nb;
+	char		*p;
+
+	nb = n;
+	i = ft_intlen(n);
+	p = (char *)malloc(sizeof(char) * (i + 1));
+	if (!p)
+		return (NULL);
+	p[i--] = '\0';
+	if (nb == 0)
+		p[0] = 48;
+	if (nb < 0)
 	{
-		p[i++] = n % 10 + 48;
-		n /= 10;
+		p[0] = '-';
+		nb = -nb;
 	}
-	if (sign < 0)
-		p[i++] = '-';
-	p[i] = '\0';
-	ft_reverse(p);
+	while (nb > 0)
+	{
+		p[i] = nb % 10 + 48;
+		nb = nb / 10;
+		i--;
+	}
 	return (p);
 }

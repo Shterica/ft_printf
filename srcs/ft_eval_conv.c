@@ -7,6 +7,7 @@ void	ft_print_char(t_print *tab)
 
 	c = va_arg(tab->args, int);
 	tab->prc = 0;
+	tab->hash = 0;
 	ft_update_tab(tab, 1);
 	if (!tab->dash)
 		while (tab->wdt-- > 0)
@@ -28,6 +29,7 @@ void	ft_print_str(t_print *tab)
 	len = ft_strlen(str);
 	if (!tab->pnt)
 		tab->prc = len;
+	tab->hash = 0;
 	ft_update_tab(tab, 0);
 	if (!tab->dash)
 		while(tab->wdt-- > 0)
@@ -43,13 +45,13 @@ void	ft_print_int(t_print *tab)
 {
 	int	nb;
 	int	len;
-	char	al;
 	char	*nbr;
 	int	i;
 
 	nb = va_arg(tab->args, int);
 	if (nb == 0 && tab->prc == 0 && tab->pnt == 1)
 		return (ft_print_empty(tab));
+	tab->hash = 0;
 	i = 0;
 	if (nb < 0)
 	{
@@ -61,25 +63,11 @@ void	ft_print_int(t_print *tab)
 		return ;
 	len = ft_strlen(nbr);
 	ft_update_tab(tab, len);
-	if (tab->zero && tab->sign)
-		tab->tl += write(1, "-", 1);
-	if (tab->zero)
-		al = '0';
-	else
-		al = ' ';
-	if (!tab->dash)
-		while (tab->wdt-- > 0)
-			tab->tl += write(1, &al, 1);
-	if (!tab->zero && tab->sign)
-		tab->tl += write(1, "-", 1);
-	while (tab->prc-- > 0)
-		tab->tl += write(1, "0", 1);
+	ft_print_nbr_left(tab);
 	while (nbr[i])
 		tab->tl += write(1, &nbr[i++], 1);
-	if (tab->dash)
-		while (tab->wdt-- > 0)
-			tab->tl += write(1, " ", 1);
 	free(nbr);
+	ft_print_nbr_right(tab);
 }
 
 void	ft_putnbr_un(unsigned int nb)
@@ -97,25 +85,15 @@ void	ft_print_unsigned_int(t_print *tab)
 {
 	unsigned int	nb;
 	int		len;
-	char		al;
 
 	nb = va_arg(tab->args, unsigned int);
 	if (nb == 0 && tab->prc == 0 && tab->pnt == 1)
 		return (ft_print_empty(tab));
 	len = ft_numlen(nb, 10);
+	tab->hash = 0;
 	ft_update_tab(tab, len);
-	if (tab->zero)
-		al = '0';
-	else
-		al = ' ';
-	if (!tab->dash)
-		while (tab->wdt-- > 0)
-			tab->tl += write(1, &al, 1);
-	while (tab->prc-- > 0)
-		tab->tl += write(1, "0", 1);
+	ft_print_nbr_left(tab);
 	ft_putnbr_un(nb);
 	tab->tl += len;
-	if (tab->dash)
-		while (tab->wdt-- > 0)
-			tab->tl += write(1, " ", 1);
+	ft_print_nbr_right(tab);
 }
