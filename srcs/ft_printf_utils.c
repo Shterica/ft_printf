@@ -17,7 +17,7 @@ void	ft_reset_tab(t_print *tab)
 void	ft_config_tab(t_print *tab)
 {
 	ft_strcpy(tab->cnv_list, "cspdiuxX%");
-	ft_strcpy(tab->flg_list, "-0.*");
+	ft_strcpy(tab->flg_list, "-0.*# +");
 	tab->cnv_eval[0] = &ft_print_char;
 	tab->cnv_eval[1] = &ft_print_str;
 	tab->cnv_eval[2] = &ft_print_pointer;
@@ -31,6 +31,9 @@ void	ft_config_tab(t_print *tab)
 	tab->flg_eval[1] = &ft_flag_zero;
 	tab->flg_eval[2] = &ft_flag_point;
 	tab->flg_eval[3] = &ft_flag_star;
+	tab->flg_eval[4] = &ft_flag_hash;
+	tab->flg_eval[5] = &ft_flag_space;
+	tab->flg_eval[6] = &ft_flag_plus;
 }
 
 void	ft_init_tab(t_print *tab)

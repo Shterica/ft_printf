@@ -12,15 +12,17 @@ int	main(void)
 	ft_printf("%2c %2c %2c\n", 'a', 'b', 'c');
 	*/
 	printf("std:\n");
-	printf("%x\n", 4294967295);
+	printf("%.0s\n", "str");
 	ft_printf("ft:\n");
-	ft_printf("%x\n", 4294967295);
-	unsigned int test;
+	ft_printf("%.0s\n", "str");
+	/*unsigned int test;
 	for (int i = 0; i < 8; i++)
 		test *= 16;
 	test--;
-	ft_printf("%x\n", test);
-	printf("%x\n", test);
+	ft_printf("%X\n", test);
+	//printf("%X\n", test);*/
+	//printf("%#x\n", 420);
+	//printf("%p\n", 420);
 	/*
 	printf("std:\n");
 	printf("%.4c\n", 'c');

@@ -21,6 +21,8 @@
  *  is_zero:	bool for numbers abs value
  *  perc:	'%' flag
  *  sp:		' ' flag
+ *	hash:	'#' flag
+ *	plus:	'+' flag
  *  cnv_list:	string of supported conversions
  *  flg_list:	string of supported flags
  *  cnv_eval:	array of function pointers for conversion evaluation
@@ -39,10 +41,14 @@ typedef struct s_print
 	int	is_zero;
 	int	perc;
 	int	sp;
+	int	hash;
+	int	plus;
+	char	base[17];
+	char	prefix[3];
 	char	cnv_list[10];
-	char	flg_list[5];
+	char	flg_list[8];
 	void	(*cnv_eval[9])(struct s_print *);
-	int	(*flg_eval[4])(struct s_print *, const char *, int);
+	int	(*flg_eval[7])(struct s_print *, const char *, int);
 }		t_print;
 
 /* MAIN FUNC (ft_printf.c) */
@@ -67,13 +73,16 @@ void	ft_print_hex_low(t_print *tab);
 void	ft_print_hex_cap(t_print *tab);
 void	ft_print_percent(t_print *tab);
 
-/* FLAGS FUNCS (ft_eval_flag.c) */
+/* FLAGS FUNCS (ft_eval_flag.c, ft_eval_flag2.c) */
 
 int	ft_eval_width(t_print *tab, const char *format, int pos);
 int	ft_flag_dash(t_print *tab, const char *format, int pos);
 int	ft_flag_zero(t_print *tab, const char *format, int pos);
 int	ft_flag_point(t_print *tab, const char *format, int pos);
 int	ft_flag_star(t_print *tab, const char *format, int pos);
+int	ft_flag_hash(t_print *tab, const char *format, int pos);
+int	ft_flag_space(t_print *tab, const char *format, int pos);
+int	ft_flag_plus(t_print *tab, const char *format, int pos);
 
 /* FLAG UTILS (ft_flag_utils.c) */
 

@@ -11,5 +11,6 @@ char	*ft_strcpy(char *dest, const char *src);
 int	ft_strlen(char *s);
 char	*ft_itoa(int n);
 void	ft_putchar_fd(char c, int fd);
+void	ft_putnbr_hex(unsigned long int nb, const char *base);
 
 #endif

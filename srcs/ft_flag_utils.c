@@ -3,6 +3,11 @@
 
 void	ft_update_tab(t_print *tab, int len)
 {
+	if (tab->hash)
+	{
+		len -= 2;
+		tab->wdt -= 2;
+	}
 	if (tab->prc)
 		tab->zero = 0;
 	if (tab->sign)
@@ -20,6 +25,4 @@ void	ft_update_tab(t_print *tab, int len)
 		tab->prc = 0;
 	else
 		tab->prc -= len;
-	//printf("\n----------\nupd: wdt = %d, prc = %d, len = %d\n------------\n", 
-	//		tab->wdt, tab->prc, len);
 }

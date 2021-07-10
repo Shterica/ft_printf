@@ -3,7 +3,8 @@ SRCS	= ft_atoi.c \
 	  ft_strcpy.c \
 	  ft_numlen.c \
 	  ft_itoa.c\
-	  ft_putchar_fd.c
+	  ft_putchar_fd.c \
+	  ft_putnbr_hex.c
 
 OBJ	:= $(patsubst %.c, %.o, $(SRCS))
 
