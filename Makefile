@@ -10,6 +10,7 @@ HEADERS	= -I includes/ -I libft/
 
 SRCS_FILES = ft_eval_conv.c \
 	     ft_eval_conv2.c \
+		 ft_conv_utils.c \
 	     ft_eval_flag.c \
 		 ft_eval_flag2.c \
 	     ft_flag_utils.c \

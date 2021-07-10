@@ -48,8 +48,8 @@ void	ft_print_int(t_print *tab)
 	int	i;
 
 	nb = va_arg(tab->args, int);
-	//if (nb == 0 && tab->prc == 0 && tab->pnt == 1)
-	//	return (ft_print_zero(tab));
+	if (nb == 0 && tab->prc == 0 && tab->pnt == 1)
+		return (ft_print_empty(tab));
 	i = 0;
 	if (nb < 0)
 	{
@@ -100,6 +100,8 @@ void	ft_print_unsigned_int(t_print *tab)
 	char		al;
 
 	nb = va_arg(tab->args, unsigned int);
+	if (nb == 0 && tab->prc == 0 && tab->pnt == 1)
+		return (ft_print_empty(tab));
 	len = ft_numlen(nb, 10);
 	ft_update_tab(tab, len);
 	if (tab->zero)

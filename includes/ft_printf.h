@@ -84,6 +84,10 @@ int	ft_flag_hash(t_print *tab, const char *format, int pos);
 int	ft_flag_space(t_print *tab, const char *format, int pos);
 int	ft_flag_plus(t_print *tab, const char *format, int pos);
 
+/* CONV UTILS (ft_conv_utils.c) */
+
+void	ft_print_empty(t_print *tab);
+
 /* FLAG UTILS (ft_flag_utils.c) */
 
 void	ft_update_tab(t_print *tab, int len);

@@ -11,10 +11,12 @@ int	main(void)
 	ft_printf("ft:\n");
 	ft_printf("%2c %2c %2c\n", 'a', 'b', 'c');
 	*/
+	
 	printf("std:\n");
-	printf("%.0s\n", "str");
+	printf("%10.0p\n", 0);
 	ft_printf("ft:\n");
-	ft_printf("%.0s\n", "str");
+	ft_printf("%10.0p\n", 0);
+	
 	/*unsigned int test;
 	for (int i = 0; i < 8; i++)
 		test *= 16;
