@@ -18,8 +18,6 @@
  *  dash:	'-' flag
  *  tl:		total length (return value)
  *  sign:	bool for number's sign
- *  is_zero:	bool for numbers abs value
- *  perc:	'%' flag
  *  sp:		' ' flag
  *  hash:	'#' flag
  *  plus:	'+' flag
@@ -38,8 +36,6 @@ typedef struct s_print
 	int		dash;
 	int		tl;
 	int		sign;
-	int		is_zero;
-	int		perc;
 	int		sp;
 	int		hash;
 	int		plus;

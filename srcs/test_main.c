@@ -5,16 +5,19 @@
 
 int	main(int ac, char **av)
 {
+	int	ft, std;
 	if (ac == 1)
 	{
-		printf("%7.5s", "yolo");
+		std = printf("%7.5s", "yolo");
 		printf("\n");
-		ft_printf("%7.5s", "yolo");
+		ft = ft_printf("%7.5s", "yolo");
 		ft_printf("\n");
-		printf("%.09s", "hi low");
+		printf("std = %d, ft = %d\n", std, ft);
+		std = printf("%.09s", "hi low");
 		printf("\n");
-		ft_printf("%.09s", "hi low");
+		ft = ft_printf("%.09s", "hi low");
 		ft_printf("\n");
+		printf("std = %d, ft = %d\n", std, ft);
 		return (0);
 	}
 	else if (av[1][0] == 'd')

@@ -31,4 +31,9 @@ clean:
 fclean: clean
 	@rm -rf $(NAME)
 
+norm:
+	@norminette $(SRCS) $(H)
+
 re: fclean all
+
+.PHONY: all clean fclean re norm

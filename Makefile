@@ -41,6 +41,8 @@ $(NAME): $(OBJS) pmake
 $(SRCS_PATH)%.o: $(SRCS_PATH)%.c
 	$(CC) $(CFLAGS) -c $< -o $@ $(HEADERS)
 
+bonus:	$(NAME)
+
 pmake:
 	make -C $(LIBFT_PATH)
 
@@ -53,4 +55,9 @@ fclean: clean
 
 re: fclean all
 
-.PHONY:	all pmake clean fclean re
+norm:
+	@norminette $(SRCS)
+	@norminette includes/
+	@make -C $(LIBFT_PATH) norm
+
+.PHONY:	all pmake clean fclean re norm
