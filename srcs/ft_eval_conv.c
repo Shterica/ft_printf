@@ -21,8 +21,8 @@ void	ft_print_char(t_print *tab)
 void	ft_print_str(t_print *tab)
 {
 	char	*str;
-	int	i;
-	int	len;
+	int		i;
+	int		len;
 
 	i = 0;
 	str = va_arg(tab->args, char *);
@@ -32,21 +32,21 @@ void	ft_print_str(t_print *tab)
 	tab->hash = 0;
 	ft_update_tab(tab, 0);
 	if (!tab->dash)
-		while(tab->wdt-- > 0)
+		while (tab->wdt-- > 0)
 			tab->tl += write(1, " ", 1);
 	while (i < tab->prc && str[i])
 		tab->tl += write(1, &str[i++], 1);
 	if (tab->dash)
-		while(tab->wdt-- > 0)
+		while (tab->wdt-- > 0)
 			tab->tl += write(1, " ", 1);
 }
 
 void	ft_print_int(t_print *tab)
 {
-	int	nb;
-	int	len;
+	int		i;
+	int		nb;
+	int		len;
 	char	*nbr;
-	int	i;
 
 	nb = va_arg(tab->args, int);
 	if (nb == 0 && tab->prc == 0 && tab->pnt == 1)
@@ -84,7 +84,7 @@ void	ft_putnbr_un(unsigned int nb)
 void	ft_print_unsigned_int(t_print *tab)
 {
 	unsigned int	nb;
-	int		len;
+	int				len;
 
 	nb = va_arg(tab->args, unsigned int);
 	if (nb == 0 && tab->prc == 0 && tab->pnt == 1)

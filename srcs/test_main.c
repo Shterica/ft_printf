@@ -7,11 +7,10 @@ int	main(int ac, char **av)
 {
 	if (ac == 1)
 	{
-		printf("%     %", 100);
+		printf("%  fsdfsdf   %", 100);
 		printf("\n");
-		ft_printf("%      %", 100);
+		ft_printf("%  fsdfsd    %", 100);
 		ft_printf("\n");
-
 		return (0);
 	}
 	else if (av[1][0] == 'd')

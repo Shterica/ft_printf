@@ -2,8 +2,8 @@
 
 int	ft_printf(const char *format, ...)
 {
-	int	i;
-	int	ret;
+	int		i;
+	int		ret;
 	t_print	*tab;
 
 	tab = (t_print *) malloc(sizeof(t_print));

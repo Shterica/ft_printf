@@ -10,9 +10,9 @@ static int	ft_isspace(char c)
 
 int	ft_atoi(const char *nbr)
 {	
-	int i;
-	int sign;
-	int res;
+	int	i;
+	int	sign;
+	int	res;
 
 	i = 0;
 	sign = 1;

@@ -1,5 +1,5 @@
-#ifndef FT_PRINTF
-# define FT_PRINTF
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -21,8 +21,8 @@
  *  is_zero:	bool for numbers abs value
  *  perc:	'%' flag
  *  sp:		' ' flag
- *	hash:	'#' flag
- *	plus:	'+' flag
+ *  hash:	'#' flag
+ *  plus:	'+' flag
  *  cnv_list:	string of supported conversions
  *  flg_list:	string of supported flags
  *  cnv_eval:	array of function pointers for conversion evaluation
@@ -31,36 +31,36 @@
 typedef struct s_print
 {
 	va_list	args;
-	int	wdt;
-	int	prc;
-	int	zero;
-	int	pnt;
-	int	dash;
-	int	tl;
-	int	sign;
-	int	is_zero;
-	int	perc;
-	int	sp;
-	int	hash;
-	int	plus;
+	int		wdt;
+	int		prc;
+	int		zero;
+	int		pnt;
+	int		dash;
+	int		tl;
+	int		sign;
+	int		is_zero;
+	int		perc;
+	int		sp;
+	int		hash;
+	int		plus;
 	char	base[17];
 	char	prefix[3];
 	char	cnv_list[10];
 	char	flg_list[8];
 	void	(*cnv_eval[9])(struct s_print *);
-	int	(*flg_eval[7])(struct s_print *, const char *, int);
+	int		(*flg_eval[7])(struct s_print *, const char *, int);
 }		t_print;
 
 /* MAIN FUNC (ft_printf.c) */
 
-int	ft_printf(const char *format, ...);
+int		ft_printf(const char *format, ...);
 
 /* FT_PRINTF UTILS (ft_printf_utils.c) */
 
 void	ft_reset_tab(t_print *tab);
 void	ft_config_tab(t_print *tab);
 void	ft_init_tab(t_print *tab);
-int	ft_eval_format(t_print *tab, const char *format, int pos);
+int		ft_eval_format(t_print *tab, const char *format, int pos);
 
 /* CONVERIONS FUNCS (ft_eval_conv.c, ft_eval_conv2.c) */
 
@@ -75,14 +75,14 @@ void	ft_print_percent(t_print *tab);
 
 /* FLAGS FUNCS (ft_eval_flag.c, ft_eval_flag2.c) */
 
-int	ft_eval_width(t_print *tab, const char *format, int pos);
-int	ft_flag_dash(t_print *tab, const char *format, int pos);
-int	ft_flag_zero(t_print *tab, const char *format, int pos);
-int	ft_flag_point(t_print *tab, const char *format, int pos);
-int	ft_flag_star(t_print *tab, const char *format, int pos);
-int	ft_flag_hash(t_print *tab, const char *format, int pos);
-int	ft_flag_space(t_print *tab, const char *format, int pos);
-int	ft_flag_plus(t_print *tab, const char *format, int pos);
+int		ft_eval_width(t_print *tab, const char *format, int pos);
+int		ft_flag_dash(t_print *tab, const char *format, int pos);
+int		ft_flag_zero(t_print *tab, const char *format, int pos);
+int		ft_flag_point(t_print *tab, const char *format, int pos);
+int		ft_flag_star(t_print *tab, const char *format, int pos);
+int		ft_flag_hash(t_print *tab, const char *format, int pos);
+int		ft_flag_space(t_print *tab, const char *format, int pos);
+int		ft_flag_plus(t_print *tab, const char *format, int pos);
 
 /* CONV UTILS (ft_conv_utils.c) */
 

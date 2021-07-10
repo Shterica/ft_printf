@@ -14,7 +14,7 @@ static int	ft_print_prefix(const char *prefix)
 void	ft_print_nbr_left(t_print *tab)
 {
 	char	al;
-	
+
 	if (tab->zero)
 		tab->tl += ft_print_prefix(tab->prefix);
 	if (tab->zero)

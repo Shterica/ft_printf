@@ -14,6 +14,7 @@ void	ft_print_hex(t_print *tab, unsigned long int nb)
 	tab->tl += len;
 	ft_print_nbr_right(tab);
 }
+
 void	ft_print_hex_low(t_print *tab)
 {
 	unsigned int	nb;
