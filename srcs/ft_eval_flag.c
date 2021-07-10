@@ -34,11 +34,17 @@ int	ft_flag_point(t_print *tab, const char *format, int pos)
 	if (ft_isdigit(format[pos]))
 	{
 		tab->prc = ft_atoi(format + pos);
-		pos += ft_numlen(tab->prc, 10);
+		while (ft_isdigit(format[pos]))
+			pos++;
 	}
 	else if (format[pos] == '*')
 	{
 		tab->prc = va_arg(tab->args, int);
+		if (tab->prc < 0)
+		{
+			tab->pnt = 0;
+			tab->prc = 0;
+		}
 		pos++;
 	}
 	return (pos);
@@ -48,6 +54,11 @@ int	ft_flag_star(t_print *tab, const char *format, int pos)
 {
 	(void) format;
 	tab->wdt = va_arg(tab->args, int);
+	if (tab->wdt < 0)
+	{
+		tab->dash = 1;
+		tab->wdt = (-1) * tab->wdt;
+	}
 	pos++;
 	return (pos);
 }

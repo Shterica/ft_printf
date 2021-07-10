@@ -12,5 +12,6 @@ int		ft_strlen(const char *s);
 char	*ft_itoa(int n);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putnbr_hex(unsigned long int nb, const char *base);
+int		ft_min(int a, int b);
 
 #endif

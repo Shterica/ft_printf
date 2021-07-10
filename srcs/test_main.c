@@ -7,9 +7,13 @@ int	main(int ac, char **av)
 {
 	if (ac == 1)
 	{
-		printf("%  fsdfsdf   %", 100);
+		printf("%7.5s", "yolo");
 		printf("\n");
-		ft_printf("%  fsdfsd    %", 100);
+		ft_printf("%7.5s", "yolo");
+		ft_printf("\n");
+		printf("%.09s", "hi low");
+		printf("\n");
+		ft_printf("%.09s", "hi low");
 		ft_printf("\n");
 		return (0);
 	}

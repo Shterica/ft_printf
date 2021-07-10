@@ -15,13 +15,11 @@ static void	ft_update_prefix(t_print *tab, int *len)
 	{
 		ft_strcpy(tab->prefix, "+");
 		tab->wdt--;
-		*len -= 1;
 	}
 	else if (tab->sp)
 	{
 		ft_strcpy(tab->prefix, " ");
 		tab->wdt--;
-		*len -= 1;
 	}
 }
 
