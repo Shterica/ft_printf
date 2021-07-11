@@ -8,16 +8,16 @@ int	main(int ac, char **av)
 	int	ft, std;
 	if (ac == 1)
 	{
-		std = printf("%7.5s", "yolo");
-		printf("\n");
-		ft = ft_printf("%7.5s", "yolo");
-		ft_printf("\n");
-		printf("std = %d, ft = %d\n", std, ft);
-		std = printf("%.09s", "hi low");
-		printf("\n");
-		ft = ft_printf("%.09s", "hi low");
-		ft_printf("\n");
-		printf("std = %d, ft = %d\n", std, ft);
+		printf("%7.5");
+		//printf("\n");
+		ft_printf("%7.5");
+		//ft_printf("\n");
+		//printf("std = %d, ft = %d\n", std, ft);
+		//std = printf("%.09", "hi low");
+		//printf("\n");
+		//ft = ft_printf("%.09", "hi low");
+		//ft_printf("\n");
+		//printf("std = %d, ft = %d\n", std, ft);
 		return (0);
 	}
 	else if (av[1][0] == 'd')

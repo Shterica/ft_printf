@@ -33,11 +33,11 @@ int	ft_eval_format(t_print *tab, const char *format, int pos)
 {
 	int	c_id;
 
-	if (!format[pos])
-		return (pos);
 	c_id = ft_str_id(tab->cnv_list, format[pos]);
 	while (c_id == -1)
 	{
+		if (!format[pos])
+			return (pos - 1);
 		pos = ft_eval_flag(tab, format, pos);
 		c_id = ft_str_id(tab->cnv_list, format[pos]);
 	}
