@@ -26,7 +26,7 @@ static void	ft_update_prefix(t_print *tab, int *len)
 void	ft_update_tab(t_print *tab, int len)
 {
 	ft_update_prefix(tab, &len);
-	if (tab->prc)
+	if (tab->pnt)
 		tab->zero = 0;
 	if (tab->wdt <= tab->prc || tab->wdt <= len)
 		tab->wdt = 0;

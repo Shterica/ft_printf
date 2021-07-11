@@ -61,14 +61,13 @@ void	ft_print_int(t_print *tab)
 		return ;
 	len = ft_strlen(nbr);
 	tab->hash = 0;
-	i = 0;
 	if (nb < 0)
-	{
 		tab->sign = 1;
-		i++;
-	}
+	if (tab->pnt)
+		tab->zero = 0;
 	ft_update_tab(tab, len);
 	ft_print_nbr_left(tab);
+	i = tab->sign;
 	while (nbr[i])
 		tab->tl += write(1, &nbr[i++], 1);
 	free(nbr);
