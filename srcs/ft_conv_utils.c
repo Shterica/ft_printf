@@ -39,6 +39,15 @@ void	ft_print_nbr_right(t_print *tab)
 
 void	ft_print_empty(t_print *tab)
 {
+	ft_update_prefix(tab);
+	tab->tl += ft_print_prefix(tab->prefix);
 	while (tab->wdt-- > 0)
 		tab->tl += write(1, " ", 1);
+}
+
+char	*ft_set_null(t_print *tab)
+{
+	if (tab->pnt && tab->prc < 6)
+		tab->prc = 0;
+	return (tab->null);
 }

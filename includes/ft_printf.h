@@ -28,23 +28,24 @@
  */
 typedef struct s_print
 {
-	va_list	args;
-	int		wdt;
-	int		prc;
-	int		zero;
-	int		pnt;
-	int		dash;
-	int		tl;
-	int		sign;
-	int		sp;
-	int		hash;
-	int		plus;
-	char	base[17];
-	char	prefix[3];
-	char	cnv_list[10];
-	char	flg_list[8];
-	void	(*cnv_eval[9])(struct s_print *);
-	int		(*flg_eval[7])(struct s_print *, const char *, int);
+	va_list		args;
+	int			wdt;
+	int			prc;
+	int			zero;
+	int			pnt;
+	int			dash;
+	int			tl;
+	int			sign;
+	int			sp;
+	int			hash;
+	int			plus;
+	char		base[17];
+	char		prefix[3];
+	char		null[7];
+	char		cnv_list[10];
+	char		flg_list[8];
+	void		(*cnv_eval[9])(struct s_print *);
+	int			(*flg_eval[7])(struct s_print *, const char *, int);
 }		t_print;
 
 /* MAIN FUNC (ft_printf.c) */
@@ -82,6 +83,7 @@ int		ft_flag_plus(t_print *tab, const char *format, int pos);
 
 /* CONV UTILS (ft_conv_utils.c) */
 
+char	*ft_set_null(t_print *tab);
 void	ft_print_empty(t_print *tab);
 void	ft_print_nbr_left(t_print *tab);
 void	ft_print_nbr_right(t_print *tab);
@@ -89,5 +91,6 @@ void	ft_print_nbr_right(t_print *tab);
 /* FLAG UTILS (ft_flag_utils.c) */
 
 void	ft_update_tab(t_print *tab, int len);
+void	ft_update_prefix(t_print *tab);
 
 #endif

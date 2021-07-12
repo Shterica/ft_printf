@@ -27,7 +27,7 @@ void	ft_print_str(t_print *tab)
 	i = 0;
 	str = va_arg(tab->args, char *);
 	if (!str)
-		return ;
+		str = ft_set_null(tab);
 	len = ft_strlen(str);
 	if (tab->pnt)
 	{
@@ -56,15 +56,15 @@ void	ft_print_int(t_print *tab)
 	nb = va_arg(tab->args, int);
 	if (nb == 0 && tab->prc == 0 && tab->pnt == 1)
 		return (ft_print_empty(tab));
-	nbr = ft_itoa(nb);
-	if (!nbr)
-		return ;
-	len = ft_strlen(nbr);
-	tab->hash = 0;
 	if (nb < 0)
 		tab->sign = 1;
 	if (tab->pnt)
 		tab->zero = 0;
+	nbr = ft_itoa(nb);
+	if (!nbr)
+		return ;
+	len = ft_strlen(nbr) - tab->sign;
+	tab->hash = 0;
 	ft_update_tab(tab, len);
 	ft_print_nbr_left(tab);
 	i = tab->sign;

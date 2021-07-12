@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc srcs/test_main.c libftprintf.a -I includes/
+gcc -Wall -Wextra srcs/test_main.c libftprintf.a -I includes/

@@ -5,13 +5,13 @@
 
 int	main(int ac, char **av)
 {
-	int	ft, std;
+	//int	ft, std;
 	if (ac == 1)
 	{
-		printf("%7.5");
+		//printf("out std = %d\n", printf("std: %.*s ", -2, (char *)0));
 		//printf("\n");
-		ft_printf("%7.5");
-		//ft_printf("\n");
+		ft_printf("out ft  = %d\n", ft_printf("ft : %.*s ", -2, 0));
+		ft_printf("\n");
 		//printf("std = %d, ft = %d\n", std, ft);
 		//std = printf("%.09", "hi low");
 		//printf("\n");

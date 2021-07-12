@@ -19,6 +19,7 @@ void	ft_config_tab(t_print *tab)
 {
 	ft_strcpy(tab->cnv_list, "cspdiuxX%");
 	ft_strcpy(tab->flg_list, "-0.*# +");
+	ft_strcpy(tab->null, "(null)");
 	tab->cnv_eval[0] = &ft_print_char;
 	tab->cnv_eval[1] = &ft_print_str;
 	tab->cnv_eval[2] = &ft_print_pointer;

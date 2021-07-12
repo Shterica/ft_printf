@@ -21,6 +21,8 @@ void	ft_print_hex_low(t_print *tab)
 
 	nb = va_arg(tab->args, unsigned int);
 	ft_strcpy(tab->base, "0123456789abcdef");
+	if (nb == 0)
+		tab->hash = 0;
 	if (tab->hash)
 		ft_strcpy(tab->prefix, "0x");
 	ft_print_hex(tab, nb);
@@ -32,6 +34,8 @@ void	ft_print_hex_cap(t_print *tab)
 
 	nb = va_arg(tab->args, unsigned int);
 	ft_strcpy(tab->base, "0123456789ABCDEF");
+	if (nb == 0)
+		tab->hash = 0;
 	if (tab->hash)
 		ft_strcpy(tab->prefix, "0X");
 	ft_print_hex(tab, nb);
@@ -48,8 +52,12 @@ void	ft_print_pointer(t_print *tab)
 	unsigned long int	nb;
 
 	nb = (unsigned long int)va_arg(tab->args, void *);
-	tab->hash = 1;
+	if (nb != 0)
+		tab->hash = 1;
+	else
+		tab->hash = 0;
 	ft_strcpy(tab->base, "0123456789abcdef");
-	ft_strcpy(tab->prefix, "0x");
+	if (tab->hash)
+		ft_strcpy(tab->prefix, "0x");
 	ft_print_hex(tab, nb);
 }

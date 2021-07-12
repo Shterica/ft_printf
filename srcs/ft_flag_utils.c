@@ -1,7 +1,7 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-static void	ft_update_prefix(t_print *tab, int *len)
+void	ft_update_prefix(t_print *tab)
 {
 	if (tab->hash)
 		tab->wdt -= 2;
@@ -9,7 +9,6 @@ static void	ft_update_prefix(t_print *tab, int *len)
 	{
 		ft_strcpy(tab->prefix, "-");
 		tab->wdt--;
-		*len -= 1;
 	}
 	else if (tab->plus)
 	{
@@ -25,7 +24,7 @@ static void	ft_update_prefix(t_print *tab, int *len)
 
 void	ft_update_tab(t_print *tab, int len)
 {
-	ft_update_prefix(tab, &len);
+	ft_update_prefix(tab);
 	if (tab->pnt)
 		tab->zero = 0;
 	if (tab->wdt <= tab->prc || tab->wdt <= len)
