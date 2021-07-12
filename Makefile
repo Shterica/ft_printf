@@ -60,8 +60,6 @@ fclean: clean
 re: fclean all
 
 norm:
-	@norminette $(SRCS)
-	@norminette includes/
-	@make -C $(LIBFT_PATH) norm
+	@norminette `git ls-files`
 
 .PHONY:	all pmake clean fclean re norm

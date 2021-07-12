@@ -62,10 +62,20 @@ void	ft_print_pointer(t_print *tab)
 	unsigned long int	nb;
 
 	nb = (unsigned long int)va_arg(tab->args, void *);
+	if (OS && nb == 0)
+	{
+		tab->wdt -= 5;
+		if (!tab->dash)
+			while (tab->wdt-- > 0)
+				tab->tl += write(1, " ", 1);
+		tab->tl += write(1, "(nil)", 5);
+		if (tab->dash)
+			while (tab->wdt-- > 0)
+				tab->tl += write(1, " ", 1);
+		return ;
+	}
 	if (nb != 0 || OS == 0)
 		tab->hash = 1;
-	else
-		tab->hash = 0;
 	ft_strcpy(tab->base, "0123456789abcdef");
 	if (tab->hash)
 		ft_strcpy(tab->prefix, "0x");
