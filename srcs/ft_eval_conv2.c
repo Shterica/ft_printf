@@ -52,7 +52,7 @@ void	ft_print_pointer(t_print *tab)
 	unsigned long int	nb;
 
 	nb = (unsigned long int)va_arg(tab->args, void *);
-	if (nb != 0)
+	if (nb != 0 || OS == 0)
 		tab->hash = 1;
 	else
 		tab->hash = 0;
