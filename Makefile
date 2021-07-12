@@ -43,6 +43,10 @@ $(SRCS_PATH)%.o: $(SRCS_PATH)%.c
 
 bonus:	$(NAME)
 
+bonus_one: $(NAME)
+
+bonus_two: $(NAME)
+
 pmake:
 	make -C $(LIBFT_PATH)
 

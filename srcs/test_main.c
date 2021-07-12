@@ -9,9 +9,9 @@ int	main(int ac, char **av)
 	
 	if (ac == 1)
 	{
-		printf("std out: %d", printf("std: %p %p ", 18446744073709551615, -18446744073709551615));
+		printf("std: %5%", -21);
 		printf("\n");
-		ft_printf("ft out : %d", ft_printf("ft : %p %p ", 18446744073709551615, -18446744073709551615));
+		ft_printf("ft : %5%", -21);
 		ft_printf("\n");
 		//printf("std = %d, ft = %d\n", std, ft);
 		//std = printf("%.09", "hi low");

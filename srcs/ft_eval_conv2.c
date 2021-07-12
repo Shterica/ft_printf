@@ -43,8 +43,18 @@ void	ft_print_hex_cap(t_print *tab)
 
 void	ft_print_percent(t_print *tab)
 {
-	ft_putchar_fd('%', 1);
-	tab->tl++;
+	if (OS)
+	{
+		ft_putchar_fd('%', 1);
+		tab->tl++;
+	}
+	else
+	{
+		ft_update_tab(tab, 1);
+		ft_print_nbr_left(tab);
+		tab->tl += write(1, "%", 1);
+		ft_print_nbr_right(tab);
+	}
 }
 
 void	ft_print_pointer(t_print *tab)
