@@ -47,7 +47,7 @@ void	ft_print_empty(t_print *tab)
 
 char	*ft_set_null(t_print *tab)
 {
-	if (tab->pnt && tab->prc < 6)
+	if (OS && tab->pnt && tab->prc < 6)
 		tab->prc = 0;
 	return (tab->null);
 }

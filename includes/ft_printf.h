@@ -5,6 +5,20 @@
 # include <stdlib.h>
 # include <stdarg.h>
 
+# ifdef __APPLE__
+#  define OS 0
+# endif
+
+# ifdef __unix__
+#  define OS 1
+# endif
+
+# ifndef __APPLE__
+#  ifndef __unix__
+#   define OS 2
+#  endif
+# endif
+
 /*
  * Structure: s_print
  * ------------------
